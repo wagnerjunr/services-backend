@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { getUsersController } from "./controllers/useGetUsers.js";
+import { getUserController } from "./controllers/useGetUser.js";
 
 export default function UsersModule(app: FastifyInstance) {
-  app.register(getUsersController);
+  app.register(getUserController);
 }
