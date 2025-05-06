@@ -11,6 +11,7 @@ import bcrypt from "bcrypt";
 const bodySchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
+  name: z.string().optional()
 });
 
 const responseSchema = z.object({
@@ -41,7 +42,7 @@ export const registerUserHandler = async (
   req: FastifyRequest,
   res: FastifyReply
 ) => {
-  const { email, password } = bodySchema.parse(req.body);
+  const { email, password,name } = bodySchema.parse(req.body);
 
   const findUser = await prisma.user.findUnique({
     where: {
@@ -59,6 +60,7 @@ export const registerUserHandler = async (
     data: {
       email,
       password: hashPassword,
+      name,
     },
   });
 

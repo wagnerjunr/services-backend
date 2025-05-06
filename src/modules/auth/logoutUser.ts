@@ -53,5 +53,10 @@ export const logoutUserHandler = async (
     domain: "localhost",
   });
 
+  res.clearCookie("acessToken", {
+    path: "/",
+    domain: "localhost",
+  });
+
   return res.status(200).send({ message: "Logout realizado com sucesso" });
 };
