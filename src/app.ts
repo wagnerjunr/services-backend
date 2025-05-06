@@ -18,7 +18,7 @@ export const app = fastify({
   logger: true,
 }).withTypeProvider<ZodTypeProvider>();
 
-app.register(fastifyCors, { origin: "*", credentials: true }); //Permite requisição de qualquer lugar e com credenciais
+app.register(fastifyCors, { origin: true, credentials: true }); //Permite requisição de qualquer lugar e com credenciais
 
 app.register(fastifyCookie);
 app.register(fastifyJWT, {

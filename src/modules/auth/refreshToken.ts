@@ -52,7 +52,7 @@ try{
     return res.status(401).send({ message: 'Invalid refresh token' });
   }
 
-  const newAccessToken = req.server.jwt.sign({ id: user.id,email: user.email },{expiresIn: '15m'});
+  const newAccessToken = req.server.jwt.sign({ id: user.id },{expiresIn: '15m'});
 
   return res.status(200).send({ accessToken: newAccessToken },);
 

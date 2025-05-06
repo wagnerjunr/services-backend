@@ -55,7 +55,7 @@ export const loginUserHandler = async (
 
   // Gere o Access Token e o Refresh Token
   const accessToken = req.server.jwt.sign(
-    { id: user.id, email: user.email },
+    { id: user.id },
     { expiresIn: "15m" }
   );
   const refreshToken = req.server.jwt.sign(
@@ -75,7 +75,13 @@ export const loginUserHandler = async (
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       path: "/",
-      maxAge: 7 * 24 * 60 * 60, // 7 dias
+      maxAge: 7 * 24 * 60 * 60, // 7 dias   
     })
-    .send({ accessToken,message:'Usuario logado com sucesso' });
+    .setCookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 15 * 60 * 1000, // 15 minutos
+    })
+    .send({message:'Usuario logado com sucesso' });
 };
