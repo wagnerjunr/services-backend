@@ -31,6 +31,7 @@ const apiRouteDefinition: RouteShorthandOptions = {
   schema: {
     summary: "Upload de imagem",
     description: "Fazer upload de uma imagem",
+    consumes: ["multipart/form-data"],
     tags: ["images"],
     // response: { 200: responseSchema },
   },
