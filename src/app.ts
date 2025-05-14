@@ -13,6 +13,7 @@ import fastifySwaggerUi from "@fastify/swagger-ui";
 import UsersModule from "./modules/users/index.js";
 import fastifyJWT from "@fastify/jwt";
 import AuthModule from "./modules/auth/index.js";
+import MediaFileModule from "./modules/mediafile/index.js";
 
 export const app = fastify({
   logger: true,
@@ -41,3 +42,5 @@ app.get("/", () => {
 app.register(UsersModule, { prefix: "/users" });
 
 app.register(AuthModule, { prefix: "/auth" });
+
+app.register(MediaFileModule, { prefix: "/mediafile" })

@@ -49,5 +49,5 @@ export const getUserHandler = async (
     },
   });
 
-  res.status(200).send({ users });
+  res.status(200).send( users );
 };
