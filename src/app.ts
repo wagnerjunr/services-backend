@@ -16,6 +16,7 @@ import UsersModule from "./modules/users/index.js";
 import fastifyJWT from "@fastify/jwt";
 import AuthModule from "./modules/auth/index.js";
 import MediaFileModule from "./modules/mediafile/index.js";
+import { ChatModule } from "./modules/chat/index.js";
 
 declare module '@fastify/multipart' {
   interface MultipartFile {
@@ -63,3 +64,5 @@ app.register(UsersModule, { prefix: "/users" });
 app.register(AuthModule, { prefix: "/auth" });
 
 app.register(MediaFileModule, { prefix: "/mediafile" })
+
+app.register(ChatModule, { prefix: "/chat" })
