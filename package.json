@@ -13,6 +13,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.14.1",
+    "@types/ws": "^8.18.1",
     "prisma": "^6.6.0",
     "typescript": "^5.8.3"
   },
@@ -27,6 +28,7 @@
     "@fastify/session": "^11.1.0",
     "@fastify/swagger": "^9.5.0",
     "@fastify/swagger-ui": "^5.2.2",
+    "@fastify/websocket": "^11.1.0",
     "@prisma/client": "^6.6.0",
     "@prisma/internals": "^6.6.0",
     "@prisma/sdk": "^3.15.2",
@@ -38,6 +40,7 @@
     "jose": "^6.0.10",
     "postgres": "^3.4.5",
     "sharp": "^0.34.1",
+    "socket.io": "^4.8.1",
     "tsx": "^4.19.3",
     "zod": "^3.24.3",
     "zod-prisma-types": "^3.2.4"
